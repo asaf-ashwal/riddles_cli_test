@@ -1,4 +1,4 @@
-import GameUtils from './utils/gameUtils.js'
+import GameUtils from "./utils/gameUtils.js";
 
-const game = new GameUtils()
-game.gameFlow()
+const game = new GameUtils();
+game.gameFlow();
