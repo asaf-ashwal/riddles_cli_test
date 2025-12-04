@@ -1,6 +1,6 @@
 import readline from "readline-sync";
 import PlayerUtils from "../utils/playerUtils.js";
-import { printAll } from "../services/service.js";
+import { printAll } from "../functions/game.functions.js";
 
 export function createPlayer() {
   const name = readline.question("What is your name? ");
@@ -9,7 +9,7 @@ export function createPlayer() {
 }
 
 export function askRiddle(ridd) {
-  printAll([ridd]);
+  printAll([ridd],'QUESTION');
   let flag = true;
   while (flag) {
 

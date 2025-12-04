@@ -1,14 +1,15 @@
 import { createPlayer } from "../functions/player.func.js";
-import { printAll, readall } from "../services/service.js";
-import { measureSolveTime } from "../functions/game.functions.js";
+import { readall } from "../services/service.js";
+import { printAll } from "../functions/game.functions.js";
+
 export default class GameUtils {
   gameFlow = () => {
-    const players = [];
+    // const players = [];
     let newPlayer = createPlayer();
-    players.push(newPlayer);
+    // players.push(newPlayer);
     const allRidd = readall();
 
-    printAll(allRidd);
+    printAll(allRidd, "All QUESTIONS");
     for (const ridd of allRidd) {
       newPlayer.askRidd(ridd);
     }

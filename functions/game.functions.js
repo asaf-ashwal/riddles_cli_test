@@ -4,6 +4,7 @@ function addZero(i) {
   }
   return i;
 }
+
 function getTimeAsSec(params) {
   const d = new Date();
   let h = addZero(d.getHours());
@@ -13,14 +14,39 @@ function getTimeAsSec(params) {
   return newtime;
 }
 
-export function measureSolveTime(fun, ridd = undefined) {
+export function measureSolveTime(fun, ridd) {
   const befor = getTimeAsSec();
-  if (ridd) {
-    fun(ridd);
-  } else {
-    fun();
-  }
-
+  fun(ridd);
   const after = getTimeAsSec();
   return after - befor;
+}
+
+export function printAll(riddels,title) {
+    console.log(`   
+         ---- ${title} ----`);
+    
+  for (const ridd of riddels) {
+    if (ridd.choices) {
+      console.log(`
+-----------------------------------
+ 
+     Riddle 1: ${ridd.name}
+     ${ridd.taskDescription}
+     options: ${ridd.choices}
+
+-----------------------------------
+
+            `);
+    } else {
+      console.log(`
+-----------------------------------
+ 
+     Riddle 1: ${ridd.name}
+     ${ridd.taskDescription}
+
+-----------------------------------
+
+            `);
+    }
+  }
 }
