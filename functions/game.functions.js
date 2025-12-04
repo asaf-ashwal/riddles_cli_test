@@ -1,3 +1,8 @@
+function sortList(list) {
+    list.toSorted((a,b)=>  b.difficulty -a.difficulty)
+}
+
+
 function addZero(i) {
   if (i < 10) {
     i = "0" + i;
